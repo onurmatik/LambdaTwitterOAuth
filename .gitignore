@@ -1,0 +1,8 @@
+settings.py
+*
+!__init__.py
+!README
+!requirements.txt
+!twitter.py
+!auth.py
+!.gitignore
