@@ -1,1 +1,24 @@
 AWS Lambda Twitter OAuth implementation
+=======================================
+
+User is redirected to the Twitter login page. If the user authorizes the application, the token taken and inserted into a DynamoDB table.
+
+Install the requirements to the project root with:
+
+    pip install -r requirements.txt -t ./
+
+
+Create a settings.py file and add the following variables:
+
+    TWITTER_CONSUMER_KEY = ''
+    TWITTER_CONSUMER_SECRET = ''
+    TWITTER_APP_NAME = 'TwitterAppName'
+
+    AWS_ACCESS_KEY_ID = ''
+    AWS_SECRET_ACCESS_KEY = ''
+    AWS_REGION = 'us-east-1'
+    DYNAMODB_TABLE = '%s-tokens' %s TWITTER_APP_NAME
+    DYNAMODB_ENDPOINT = 'https://dynamodb.%s.amazonaws.com' % AWS_REGION
+
+    LOGIN_REDIRECT_URL = '/'
+    CALLBACK_URL = 'URL of the API resource that is mapped to the get_access_token method'
