@@ -22,3 +22,8 @@ Create a settings.py file and add the following variables:
 
     LOGIN_REDIRECT_URL = '/'
     CALLBACK_URL = 'URL of the API resource that is mapped to the get_access_token method'
+
+
+Compress all the files and folders in the project directory (not the project directory itself) into a single .zip file. 
+Create 2 resources in the AWS API Gateway, first for the initial step to get the temporary sign-in token and second to get the actual access token. 
+Upload the same .zip file for both of your AWS Lambda functions but map the first one to ´auth.get_sign_in_token` and the second one to the ´auth.get_access_token` methods.
