@@ -39,11 +39,11 @@ def get_access_token(event, context):
         region_name=AWS_REGION,
         endpoint_url=DYNAMODB_ENDPOINT,
     )
-    table = dynamodb.Table('twitter-tokens')
+    table = dynamodb.Table(DYNAMODB_TABLE)
     table.put_item(
         Item={
             'user_id': int(token['user_id']),
-            'app_name': APP_NAME,
+            'app_name': TWITTER_APP_NAME,
             'data': json.dumps(token),
         },
         #ConditionExpression='attribute_not_exists',
