@@ -5,23 +5,26 @@ User is redirected to the Twitter login page. If the user authorizes the applica
 
 Install the requirements to the project root with:
 
-```pip install -r requirements.txt -t ./```
-
-
-Create a settings.py file and add the following variables:
 ```
-    TWITTER_CONSUMER_KEY = ''
-    TWITTER_CONSUMER_SECRET = ''
-    TWITTER_APP_NAME = 'TwitterAppName'
+pip install -r requirements.txt -t ./
+```
 
-    AWS_ACCESS_KEY_ID = ''
-    AWS_SECRET_ACCESS_KEY = ''
-    AWS_REGION = 'us-east-1'
-    DYNAMODB_TABLE = '%s-tokens' %s TWITTER_APP_NAME
-    DYNAMODB_ENDPOINT = 'https://dynamodb.%s.amazonaws.com' % AWS_REGION
 
-    LOGIN_REDIRECT_URL = '/'
-    CALLBACK_URL = 'URL of the API resource that is mapped to the get_access_token method'
+Create a `settings.py` file and add the following variables:
+
+```
+TWITTER_CONSUMER_KEY = ''
+TWITTER_CONSUMER_SECRET = ''
+TWITTER_APP_NAME = 'TwitterAppName'
+
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_REGION = 'us-east-1'
+DYNAMODB_TABLE = '%s-tokens' %s TWITTER_APP_NAME
+DYNAMODB_ENDPOINT = 'https://dynamodb.%s.amazonaws.com' % AWS_REGION
+
+LOGIN_REDIRECT_URL = '/'
+CALLBACK_URL = 'URL of the API resource that is mapped to the get_access_token method'
 ```
 
 Compress all the files and folders in the project directory (not the project directory itself) into a single .zip file. 
